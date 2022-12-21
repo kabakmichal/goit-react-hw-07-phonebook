@@ -32,19 +32,19 @@ const contactsSlice = createSlice({
   },
   extraReducers: {
     [fetchContacts.pending]: handlePending,
-    [fetchContacts.fullfilled](state, action) {
+    [fetchContacts.fulfilled](state, action) {
       handleFullfilled(state);
       state.items = action.payload;
     },
     [fetchContacts.rejected]: handleRejected,
     [addContact.pending]: handlePending,
-    [addContact.fullfilled](state, action) {
+    [addContact.fulfilled](state, action) {
       handleFullfilled(state);
       state.items.push(action.payload);
     },
     [addContact.rejected]: handleRejected,
     [deleteContact.pending]: handlePending,
-    [deleteContact.fullfilled](state, action) {
+    [deleteContact.fulfilled](state, action) {
       handleFullfilled(state);
       state.items = state.items.filter(item => item.id !== action.payload.id);
     },
