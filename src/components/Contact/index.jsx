@@ -13,7 +13,7 @@ export const Contact = ({ contact }) => {
   return (
     <>
       <span className={styles.paragraph}>
-        {contact.name}: {contact.number}
+        {contact.name}: {contact.phone}
       </span>
       <button
         type="button"
